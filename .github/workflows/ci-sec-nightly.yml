@@ -1,6 +1,8 @@
 name: CI - Nightly - Spring Boot DevSecOps
 
 on:
+  push:
+    branches: ['feature/security-pipeline']
   schedule:
     - cron: '55 20 * * *'  # Runs every day at 20:55
       timezone: 'America/La_Paz'
