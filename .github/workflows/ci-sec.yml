@@ -190,4 +190,9 @@ jobs:
             exit 1
           fi
 
+          if [[ "${{ needs.sca-dependency-check.result }}" != "success" ]]; then
+            echo "::error::SCA Dependency-Check no finalizó correctamente"
+            exit 1
+          fi
+
           echo "Quality gate passed"
